@@ -14,6 +14,23 @@ body {
   margin: 0 auto;
 }
 
+.wrapper {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.top {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
 .header {
   margin-bottom: 65px;
 }
@@ -25,7 +42,7 @@ body {
 }
 
 .header .header_bottom {
-  height: 764px;
+  height: 100%;
   background-color: #F1E4E6;
 }
 
@@ -91,6 +108,78 @@ body {
   height: 93px;
   white-space: nowrap;
   margin-left: 64px;
+  text-transform: uppercase;
+}
+
+.header .menu_box {
+  background-color: #FFFFFF;
+  width: 232px;
+  height: 800px;
+  position: absolute;
+  top: 27px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header .menu_list {
+  position: relative;
+}
+
+.header .menu_section {
+  font-size: 14px;
+  line-height: 17px;
+  color: #F16D7F;
+  text-align: left;
+  margin-left: 34px;
+  margin-bottom: 6px;
+}
+
+.header .menu_items {
+  font-size: 14px;
+  line-height: 17px;
+  color: #6F6E6E;
+  text-align: left;
+  margin-bottom: 8px;
+  margin-left: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header .menu_title {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-left: 34px;
+  margin-top: 37px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.header .menu_link {
+  padding-left: 20px;
+  padding-bottom: 12px;
+  padding-top: 6px;
+  text-decoration: none;
+  color: #6F6E6E;
+}
+
+.menu_link:hover {
+  color: #F16D7F;
+}
+
+.menu_list:hover .menu_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .content_photo_top {
@@ -162,10 +251,20 @@ body {
   position: absolute;
   top: 105px;
   text-align: center;
+  text-transform: uppercase;
 }
 
-.items {
+.item-sec {
   margin-top: 66px;
+}
+
+.item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 8px;
+  margin-bottom: 30px;
+  position: relative;
 }
 
 .items_title {
@@ -181,23 +280,41 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .text_items {
   font-weight: 300;
   font-size: 14px;
   line-height: 17px;
-  color: #5D5D5D;
+  color: #9F9F9F;
   margin-bottom: 48px;
 }
 
-.item_card {
+.item_link {
   width: 360px;
   background: #F8F8F8;
-  margin-bottom: 30px;
   text-decoration: none;
+}
+
+.item-txt-box {
+  padding: 15px;
+}
+
+.item:hover {
+  -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+}
+
+.item_pic {
+  width: 100%;
+}
+
+.item:hover .item_pic {
+  -webkit-filter: brightness(30%);
+          filter: brightness(30%);
 }
 
 .item_name {
@@ -208,6 +325,7 @@ body {
   padding-left: 18px;
   padding-top: 25px;
   padding-bottom: 12px;
+  text-transform: uppercase;
 }
 
 .item_description {
@@ -221,6 +339,81 @@ body {
 .item_price {
   text-align: left;
   padding: 18px;
+}
+
+.add-box {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 420px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  pointer-events: none;
+}
+
+.add-link {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #FFFFFF;
+  padding: 10px 13px;
+  pointer-events: all;
+}
+
+.add-txt {
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  font-family: Lato;
+  font-weight: 400;
+  margin-left: 11px;
+}
+
+.item:hover .add-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.add-link:hover {
+  -webkit-box-shadow: 0 0 10px #FFFFFF;
+          box-shadow: 0 0 10px #FFFFFF;
+}
+
+.item_browse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 100%;
+  margin-top: 48px;
+  margin-bottom: 95px;
+}
+
+.browse_all_products {
+  font-size: 16px;
+  line-height: 19px;
+  color: #F26376;
+  text-decoration: none;
+  border: 1px solid #FF6A6A;
+  padding: 14px 38px;
+}
+
+.browse_all_products:hover {
+  background-color: #F16D7F;
+  color: #FFFFFF;
 }
 
 .benefits {
@@ -340,6 +533,7 @@ body {
   font-size: 18px;
   line-height: 30px;
   padding-bottom: 32px;
+  text-transform: uppercase;
 }
 
 .footer .text_subscribe_bold {
@@ -365,6 +559,12 @@ body {
   color: #FFFFFF;
   font-size: 14px;
   line-height: 17px;
+}
+
+.footer .form_footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .footer .footer_bottom {
@@ -396,13 +596,41 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer .social_box {
+  background-color: #FFFFFF;
+  height: 32px;
+  width: 32px;
+  margin-right: 7px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  list-style: none;
 }
 
-.footer .social-logo {
-  padding-right: 7px;
+.footer .fab {
+  font-size: 20px;
+}
+
+.footer .social_logo {
+  text-decoration: none;
+  color: black;
+}
+
+.footer .social_logo:hover .social_box {
+  background-color: #F16D7F;
+}
+
+.footer .social_logo:hover {
+  color: #FFFFFF;
 }
 /*# sourceMappingURL=style.css.map */
